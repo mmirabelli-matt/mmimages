@@ -10,33 +10,91 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BiographyRouteImport } from './routes/biography'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as InteriorsRouteImport } from './routes/interiors'
+import { Route as PressRouteImport } from './routes/press'
+import { Route as SportsRouteImport } from './routes/sports'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BiographyRoute = BiographyRouteImport.update({
+  id: '/biography',
+  path: '/biography',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InteriorsRoute = InteriorsRouteImport.update({
+  id: '/interiors',
+  path: '/interiors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PressRoute = PressRouteImport.update({
+  id: '/press',
+  path: '/press',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SportsRoute = SportsRouteImport.update({
+  id: '/sports',
+  path: '/sports',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/biography': typeof BiographyRoute
+  '/contact': typeof ContactRoute
+  '/interiors': typeof InteriorsRoute
+  '/press': typeof PressRoute
+  '/sports': typeof SportsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/biography': typeof BiographyRoute
+  '/contact': typeof ContactRoute
+  '/interiors': typeof InteriorsRoute
+  '/press': typeof PressRoute
+  '/sports': typeof SportsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/biography': typeof BiographyRoute
+  '/contact': typeof ContactRoute
+  '/interiors': typeof InteriorsRoute
+  '/press': typeof PressRoute
+  '/sports': typeof SportsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/biography' | '/contact' | '/interiors' | '/press' | '/sports'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/biography' | '/contact' | '/interiors' | '/press' | '/sports'
+  id:
+    | '__root__'
+    | '/'
+    | '/biography'
+    | '/contact'
+    | '/interiors'
+    | '/press'
+    | '/sports'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BiographyRoute: typeof BiographyRoute
+  ContactRoute: typeof ContactRoute
+  InteriorsRoute: typeof InteriorsRoute
+  PressRoute: typeof PressRoute
+  SportsRoute: typeof SportsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +106,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/biography': {
+      id: '/biography'
+      path: '/biography'
+      fullPath: '/biography'
+      preLoaderRoute: typeof BiographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interiors': {
+      id: '/interiors'
+      path: '/interiors'
+      fullPath: '/interiors'
+      preLoaderRoute: typeof InteriorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/press': {
+      id: '/press'
+      path: '/press'
+      fullPath: '/press'
+      preLoaderRoute: typeof PressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sports': {
+      id: '/sports'
+      path: '/sports'
+      fullPath: '/sports'
+      preLoaderRoute: typeof SportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BiographyRoute: BiographyRoute,
+  ContactRoute: ContactRoute,
+  InteriorsRoute: InteriorsRoute,
+  PressRoute: PressRoute,
+  SportsRoute: SportsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
