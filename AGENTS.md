@@ -28,3 +28,4 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+- Portfolio photos are self-hosted in public/photos and listed in src/lib/photos.ts; the old mmimages.com server throttles hotlinked loads.
