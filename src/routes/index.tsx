@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { hero, press, sports, interiors } from "@/lib/photos";
+import { hero, press, sports } from "@/lib/photos";
 
 const HERO = hero.home;
 
@@ -7,9 +7,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Matthew Mirabelli — Photographer, Malta" },
-      { name: "description", content: "Award-winning Maltese photojournalist. Press, sports, interiors and wedding photography by Matthew Mirabelli." },
+      { name: "description", content: "Award-winning Maltese photojournalist. Press, sports and wedding photography by Matthew Mirabelli." },
       { property: "og:title", content: "Matthew Mirabelli — Photographer, Malta" },
-      { property: "og:description", content: "Press, sports, interiors and weddings by an award-winning Maltese photojournalist." },
+      { property: "og:description", content: "Press, sports and weddings by an award-winning Maltese photojournalist." },
     ],
   }),
   component: Index,
@@ -18,7 +18,6 @@ export const Route = createFileRoute("/")({
 const sections = [
   { to: "/press", n: "01", label: "Press", img: press[0]?.full },
   { to: "/sports", n: "02", label: "Sports", img: sports[0]?.full },
-  { to: "/interiors", n: "03", label: "Interiors", img: interiors[0]?.full },
 ] as const;
 
 function Index() {
@@ -40,7 +39,7 @@ function Index() {
 
       <section className="mx-auto max-w-7xl px-6 py-24">
         <p className="eyebrow mb-10">Selected work</p>
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2">
           {sections.map((s) => (
             <Link key={s.to} to={s.to} className="group relative block aspect-[3/4] overflow-hidden bg-card">
               <img src={s.img} alt={s.label} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />

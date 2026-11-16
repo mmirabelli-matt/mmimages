@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BiographyRouteImport } from './routes/biography'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as InteriorsRouteImport } from './routes/interiors'
 import { Route as PressRouteImport } from './routes/press'
 import { Route as SportsRouteImport } from './routes/sports'
 
@@ -31,11 +30,6 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const InteriorsRoute = InteriorsRouteImport.update({
-  id: '/interiors',
-  path: '/interiors',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PressRoute = PressRouteImport.update({
   id: '/press',
   path: '/press',
@@ -51,7 +45,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/biography': typeof BiographyRoute
   '/contact': typeof ContactRoute
-  '/interiors': typeof InteriorsRoute
   '/press': typeof PressRoute
   '/sports': typeof SportsRoute
 }
@@ -59,7 +52,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/biography': typeof BiographyRoute
   '/contact': typeof ContactRoute
-  '/interiors': typeof InteriorsRoute
   '/press': typeof PressRoute
   '/sports': typeof SportsRoute
 }
@@ -68,31 +60,21 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/biography': typeof BiographyRoute
   '/contact': typeof ContactRoute
-  '/interiors': typeof InteriorsRoute
   '/press': typeof PressRoute
   '/sports': typeof SportsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    '/' | '/biography' | '/contact' | '/interiors' | '/press' | '/sports'
+  fullPaths: '/' | '/biography' | '/contact' | '/press' | '/sports'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/biography' | '/contact' | '/interiors' | '/press' | '/sports'
-  id:
-    | '__root__'
-    | '/'
-    | '/biography'
-    | '/contact'
-    | '/interiors'
-    | '/press'
-    | '/sports'
+  to: '/' | '/biography' | '/contact' | '/press' | '/sports'
+  id: '__root__' | '/' | '/biography' | '/contact' | '/press' | '/sports'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BiographyRoute: typeof BiographyRoute
   ContactRoute: typeof ContactRoute
-  InteriorsRoute: typeof InteriorsRoute
   PressRoute: typeof PressRoute
   SportsRoute: typeof SportsRoute
 }
@@ -120,13 +102,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/interiors': {
-      id: '/interiors'
-      path: '/interiors'
-      fullPath: '/interiors'
-      preLoaderRoute: typeof InteriorsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/press': {
       id: '/press'
       path: '/press'
@@ -148,7 +123,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BiographyRoute: BiographyRoute,
   ContactRoute: ContactRoute,
-  InteriorsRoute: InteriorsRoute,
   PressRoute: PressRoute,
   SportsRoute: SportsRoute,
 }
