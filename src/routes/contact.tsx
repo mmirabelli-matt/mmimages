@@ -5,7 +5,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Matthew Mirabelli Photography, Malta" },
-      { name: "description", content: "Get in touch with Malta photographer Matthew Mirabelli for press, sports, interiors and wedding commissions." },
+      { name: "description", content: "Get in touch with Malta photographer Matthew Mirabelli for press, sports and wedding commissions." },
       { property: "og:title", content: "Contact Matthew Mirabelli" },
       { property: "og:description", content: "Commission a photographer in Malta." },
     ],
