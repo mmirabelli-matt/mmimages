@@ -23,7 +23,7 @@ const awards = [
 function Bio() {
   return (
     <main className="mx-auto max-w-7xl px-6 pb-24 pt-32">
-      <p className="eyebrow mb-4 animate-rise">04 — Biography</p>
+      <p className="eyebrow mb-4 animate-rise">03 — Biography</p>
       <h1 className="mb-16 max-w-4xl text-5xl leading-[1.05] animate-rise md:text-7xl">
         It began with an Incredible Hulk 35mm camera, a gift from my father.
       </h1>

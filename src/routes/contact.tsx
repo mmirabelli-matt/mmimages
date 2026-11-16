@@ -17,7 +17,7 @@ function Contact() {
   return (
     <main className="grid min-h-screen lg:grid-cols-2">
       <div className="flex flex-col justify-center px-6 pb-16 pt-32 lg:px-16">
-        <p className="eyebrow mb-4">05 — Contact</p>
+        <p className="eyebrow mb-4">04 — Contact</p>
         <h1 className="mb-12 text-6xl md:text-8xl animate-rise">Let's make<br />a picture.</h1>
         <dl className="space-y-8">
           <div><dt className="eyebrow mb-2">Based in</dt><dd className="font-display text-3xl">Malta</dd></div>
