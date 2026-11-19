@@ -14,8 +14,8 @@ export const Route = createFileRoute("/biography")({
 });
 
 const awards = [
-  ["Press Photographer of the Year", "2011 · 2010 · 1999"],
-  ["Sports Photographer of the Year", "2011 · 2010 · 2008 · 2006"],
+  ["Press Photographer of the Year", "2026 · 2011 · 2010 · 1999"],
+  ["Sports Photographer of the Year", "2024 · 2011 · 2010 · 2008 · 2006"],
   ["Images Sans Frontières — Silver Medal", "‘Golden Temple’"],
   ["MPS — Honourable Mention", "‘Kosovo Music School’"],
 ];
