@@ -51,10 +51,10 @@ function Index() {
             </Link>
           ))}
         </div>
-        <a href="https://weddings.mmimages.com/" target="_blank" rel="noreferrer" className="group mt-4 flex items-center justify-between border border-border px-6 py-8 transition-colors hover:border-primary">
+        <Link to="/weddings" className="group mt-4 flex items-center justify-between border border-border px-6 py-8 transition-colors hover:border-primary">
           <span className="font-display text-4xl md:text-5xl">Weddings</span>
-          <span className="eyebrow group-hover:text-primary">Visit wedding portfolio ↗</span>
-        </a>
+          <span className="eyebrow group-hover:text-primary">Explore wedding photography →</span>
+        </Link>
       </section>
 
       <section className="border-t border-border">

@@ -14,6 +14,7 @@ import { Route as BiographyRouteImport } from './routes/biography'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as PressRouteImport } from './routes/press'
 import { Route as SportsRouteImport } from './routes/sports'
+import { Route as WeddingsRouteImport } from './routes/weddings'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,6 +41,11 @@ const SportsRoute = SportsRouteImport.update({
   path: '/sports',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WeddingsRoute = WeddingsRouteImport.update({
+  id: '/weddings',
+  path: '/weddings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/press': typeof PressRoute
   '/sports': typeof SportsRoute
+  '/weddings': typeof WeddingsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/press': typeof PressRoute
   '/sports': typeof SportsRoute
+  '/weddings': typeof WeddingsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,13 +70,22 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/press': typeof PressRoute
   '/sports': typeof SportsRoute
+  '/weddings': typeof WeddingsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/biography' | '/contact' | '/press' | '/sports'
+  fullPaths:
+    '/' | '/biography' | '/contact' | '/press' | '/sports' | '/weddings'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/biography' | '/contact' | '/press' | '/sports'
-  id: '__root__' | '/' | '/biography' | '/contact' | '/press' | '/sports'
+  to: '/' | '/biography' | '/contact' | '/press' | '/sports' | '/weddings'
+  id:
+    | '__root__'
+    | '/'
+    | '/biography'
+    | '/contact'
+    | '/press'
+    | '/sports'
+    | '/weddings'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,6 +94,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   PressRoute: typeof PressRoute
   SportsRoute: typeof SportsRoute
+  WeddingsRoute: typeof WeddingsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -116,6 +134,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SportsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/weddings': {
+      id: '/weddings'
+      path: '/weddings'
+      fullPath: '/weddings'
+      preLoaderRoute: typeof WeddingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -125,6 +150,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   PressRoute: PressRoute,
   SportsRoute: SportsRoute,
+  WeddingsRoute: WeddingsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

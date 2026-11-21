@@ -12,6 +12,6 @@ export default defineConfig({
       autoSubfolderIndex: true,
       failOnError: true,
     },
-    pages: [{ path: "/" }, { path: "/press" }, { path: "/sports" }, { path: "/biography" }, { path: "/contact" }],
+    pages: [{ path: "/" }, { path: "/press" }, { path: "/sports" }, { path: "/weddings" }, { path: "/biography" }, { path: "/contact" }],
   },
 });
