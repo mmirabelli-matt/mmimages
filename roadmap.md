@@ -4,3 +4,4 @@
 - [x] Verify every page on desktop and phone after removal
 - [x] Tell the user how to download the site (codebase ZIP / publish)
 - [x] Explain how to add and replace photos by hand
+- [x] Export a plain uploadable copy with index.html (FTP-ready ZIP)
