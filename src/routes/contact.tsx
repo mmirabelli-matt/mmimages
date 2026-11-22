@@ -8,6 +8,8 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Get in touch with Malta photographer Matthew Mirabelli for press, sports and wedding commissions." },
       { property: "og:title", content: "Contact Matthew Mirabelli" },
       { property: "og:description", content: "Commission a photographer in Malta." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Contact,

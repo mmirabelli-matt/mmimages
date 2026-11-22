@@ -10,6 +10,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Award-winning Maltese photojournalist. Press, sports and wedding photography by Matthew Mirabelli." },
       { property: "og:title", content: "Matthew Mirabelli — Photographer, Malta" },
       { property: "og:description", content: "Press, sports and weddings by an award-winning Maltese photojournalist." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,

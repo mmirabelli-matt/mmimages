@@ -58,6 +58,8 @@
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
   --color-overlay: var(--overlay);
+  --color-gold: var(--gold);
+  --color-on-overlay: var(--on-overlay);
   --font-display: "Instrument Serif", Georgia, serif;
   --font-sans: "Archivo", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
@@ -149,6 +151,49 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+.wedding-theme {
+  --radius: 0.25rem;
+  --background: oklch(0.975 0.008 80);
+  --foreground: oklch(0.22 0.01 60);
+  --card: oklch(0.99 0.005 80);
+  --card-foreground: oklch(0.22 0.01 60);
+  --popover: oklch(0.99 0.005 80);
+  --popover-foreground: oklch(0.22 0.01 60);
+  --primary: oklch(0.22 0.01 60);
+  --primary-foreground: oklch(0.975 0.008 80);
+  --secondary: oklch(0.94 0.012 75);
+  --secondary-foreground: oklch(0.22 0.01 60);
+  --muted: oklch(0.94 0.012 75);
+  --muted-foreground: oklch(0.5 0.015 60);
+  --accent: oklch(0.72 0.08 70);
+  --accent-foreground: oklch(0.18 0.01 60);
+  --gold: oklch(0.72 0.08 70);
+  --border: oklch(0.88 0.015 75);
+  --input: oklch(0.88 0.015 75);
+  --ring: oklch(0.72 0.08 70);
+  --overlay: oklch(0.12 0.01 60);
+  --on-overlay: oklch(0.98 0.005 80);
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Jost", system-ui, sans-serif;
+  color-scheme: light;
+  font-family: var(--font-sans);
+  font-weight: 300;
+}
+
+.wedding-theme h1,
+.wedding-theme h2,
+.wedding-theme h3 {
+  letter-spacing: normal;
+}
+
+.wedding-theme section[id] {
+  scroll-margin-top: 5rem;
+}
+
+html:has(.wedding-theme) {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -168,3 +213,12 @@
 @utility eyebrow { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted-foreground); }
 @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 @utility animate-rise { animation: rise 0.9s cubic-bezier(.2,.7,.2,1) both; }
+@utility wedding-eyebrow { font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; font-weight: 400; }
+@keyframes kenburns { from { transform: scale(1.02); } to { transform: scale(1.12); } }
+@utility animate-kenburns { animation: kenburns 9s ease-out forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(.wedding-theme) { scroll-behavior: auto; }
+  .wedding-theme .animate-kenburns,
+  .wedding-theme .animate-rise { animation: none; }
+}

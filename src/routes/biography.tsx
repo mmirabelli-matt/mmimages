@@ -8,6 +8,8 @@ export const Route = createFileRoute("/biography")({
       { name: "description", content: "Born in Malta in 1975, Matthew Mirabelli is a Times of Malta photographer and multiple Press & Sports Photographer of the Year." },
       { property: "og:title", content: "Biography — Matthew Mirabelli" },
       { property: "og:description", content: "Photojournalist, Times of Malta. Press & Sports Photographer of the Year." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Bio,

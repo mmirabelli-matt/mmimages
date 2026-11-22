@@ -9,6 +9,8 @@ export const Route = createFileRoute("/press")({
       { name: "description", content: "News and photojournalism from Malta and assignments abroad, by award-winning Times of Malta photographer Matthew Mirabelli." },
       { property: "og:title", content: "Press Photography — Matthew Mirabelli" },
       { property: "og:description", content: "News and photojournalism from Malta and assignments abroad, by award-winning Times of Malta photographer Matthew Mirabelli." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: () => <Gallery title="Press" index="01" intro="News and photojournalism from Malta and assignments abroad, by award-winning Times of Malta photographer Matthew Mirabelli." photos={press} />,

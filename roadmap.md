@@ -5,5 +5,5 @@
 - [x] Tell the user how to download the site (codebase ZIP / publish)
 - [x] Explain how to add and replace photos by hand
 - [x] Export a plain uploadable copy with index.html (FTP-ready ZIP)
-- [ ] Add an internal Weddings page using the mmimagesweddings design, wording, photos, and music
-- [ ] Connect the Weddings links and verify the page on desktop and phone
+- [x] Add an internal Weddings page using the mmimagesweddings design, wording, photos, and music
+- [x] Connect the Weddings links and verify the page on desktop and phone

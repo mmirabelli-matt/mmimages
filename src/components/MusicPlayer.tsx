@@ -9,16 +9,27 @@ export function MusicPlayer() {
   useEffect(() => {
     const audio = ref.current;
     if (!audio) return;
+    let mounted = true;
+    const start = () => {
+      audio.play().then(() => {
+        if (mounted) setPlaying(true);
+      }).catch(() => {});
+      window.removeEventListener("pointerdown", start);
+    };
+
     audio.volume = 0.5;
-    audio.play().then(() => setPlaying(true)).catch(() => {
+    audio.play().then(() => {
+      if (mounted) setPlaying(true);
+    }).catch(() => {
       // Browsers block autoplay until the visitor interacts; start on first click.
-      const start = () => {
-        audio.play().then(() => setPlaying(true)).catch(() => {});
-        window.removeEventListener("pointerdown", start);
-      };
       window.addEventListener("pointerdown", start);
-      return () => window.removeEventListener("pointerdown", start);
     });
+
+    return () => {
+      mounted = false;
+      window.removeEventListener("pointerdown", start);
+      audio.pause();
+    };
   }, []);
 
   const toggle = () => {

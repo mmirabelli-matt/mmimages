@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 
 import { galleryPhotos, heroPhotos } from "@/lib/wedding-photos";
 
-const photoExists = (path: string) => existsSync(resolve(process.cwd(), "public", path));
+const photoExists = (path: string) => existsSync(resolve(process.cwd(), "public", path.replace(/^\/+/, "")));
 
 describe("Wedding photography", () => {
   it("includes all nine opening photographs", () => {

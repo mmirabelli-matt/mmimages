@@ -23,9 +23,6 @@ export function SiteNav() {
               {l.label}
             </Link>
           ))}
-          <a href="https://weddings.mmimages.com/" target="_blank" rel="noreferrer" className="eyebrow transition-colors hover:text-foreground">
-            Weddings ↗
-          </a>
         </nav>
         <button className="eyebrow md:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
           {open ? "Close" : "Menu"}
@@ -38,7 +35,6 @@ export function SiteNav() {
               {l.label}
             </Link>
           ))}
-          <a href="https://weddings.mmimages.com/" target="_blank" rel="noreferrer" className="font-display text-3xl">Weddings ↗</a>
         </nav>
       )}
     </header>
